@@ -1,5 +1,5 @@
 // Existing functions
-function goToPage1() { window.location.href = "page1.html"; }
+function goToPage1() { window.location.href = "index.html"; }
 
 function goToPage2() { window.location.href = "page2.html"; }
 
@@ -18,4 +18,4 @@ function goToWish() { window.location.href = "wish.html"; }
 
 function goToCandles() { window.location.href = "candles.html"; }
 
-function goBack() { window.location.href = "page1.html"; }
+function goBack() { window.location.href = "index.html"; }
