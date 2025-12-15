@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Flowers</title>
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: #ffdce8;
+            font-family: "Poppins", sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        /* Title */
+        
+        h1 {
+            margin-top: 40px;
+            margin-bottom: 10px;
+            font-size: 3rem;
+            color: #ff4f9a;
+            font-weight: 700;
+            justify-content: center;
+        }
+        /* Main layout */
+        
+        .main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+        }
+        /* Side columns */
+        
+        .side {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        /* Message pills */
+        
+        .msg {
+            padding: 14px 24px;
+            border-radius: 30px;
+            font-size: 1rem;
+            text-align: center;
+            width: 260px;
+            margin: 12px 0;
+        }
+        /* Colors */
+        
+        .filled {
+            background: #ff73c6;
+            color: white;
+        }
+        
+        .outlined {
+            border: 3px solid #ff73c6;
+            color: #333;
+            background: transparent;
+        }
+        /* LEFT SIDE – staggered */
+        
+        .side:first-child .msg:nth-child(1) {
+            transform: translateX(90px);
+            margin-top: 10px;
+        }
+        
+        .side:first-child .msg:nth-child(2) {
+            margin-left: 0;
+            margin-top: 25px;
+        }
+        
+        .side:first-child .msg:nth-child(3) {
+            transform: translateX(90px);
+            margin-top: 25px;
+        }
+        
+        .side:first-child .msg:nth-child(4) {
+            margin-left: 10px;
+            margin-top: 25px;
+        }
+        
+        .side:first-child .msg:nth-child(5) {
+            transform: translateX(90px);
+            margin-top: 25px;
+        }
+        /* RIGHT SIDE – staggered correctly */
+        
+        .side:last-child .msg:nth-child(1) {
+            transform: translateX(-70px);
+        }
+        
+        .side:last-child .msg:nth-child(2) {
+            transform: translateX(0);
+            margin-top: 25px;
+        }
+        
+        .side:last-child .msg:nth-child(3) {
+            transform: translateX(-70px);
+            margin-top: 25px;
+        }
+        
+        .side:last-child .msg:nth-child(4) {
+            transform: translateX(0px);
+            margin-top: 25px;
+        }
+        
+        .side:last-child .msg:nth-child(5) {
+            transform: translateX(-70px);
+            margin-top: 25px;
+        }
+        /* Center bouquet */
+        
+        .center-card {
+            background: #ffeef5;
+            border: 4px solid #ff73c6;
+            border-radius: 30px;
+            /* padding: 30px 40px; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .center-card img {
+            width: 400px;
+            height: 450px;
+            border-radius: 30px;
+        }
+        /* Return button */
+        
+        button {
+            margin-top: 30px;
+            padding: 10px 50px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 10px;
+            background: #ff4f9a;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        button:hover {
+            background: #e63d84;
+        }
+        /* Mobile */
+        
+        @media (max-width: 900px) {
+            .main {
+                flex-direction: column;
+            }
+            .side:first-child .msg,
+            .side:last-child .msg {
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Virtual Flowers For You!</h1>
+
+    <div class="main">
+
+        <!-- Left messages -->
+        <div class="side">
+            <div class="msg filled">You are the best!</div>
+            <div class="msg outlined">You are the best!</div>
+            <div class="msg filled">You are the best!</div>
+            <div class="msg outlined">You are the best!</div>
+            <div class="msg filled">You are the best!</div>
+        </div>
+
+        <!-- Center bouquet -->
+        <div class="center-card">
+            <img src="img/Untitled (3).png" alt="Bouquet">
+        </div>
+
+        <!-- Right messages -->
+        <div class="side">
+            <div class="msg filled">You are the best!</div>
+            <div class="msg outlined">You are the best!</div>
+            <div class="msg filled">You are the best!</div>
+            <div class="msg outlined">You are the best!</div>
+            <div class="msg filled">You are the best!</div>
+        </div>
+
+    </div>
+
+    <button onclick="goBack()">Return</button>
+
+    <script>
+        function goBack() {
+            window.location.href = "page3.html";
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <h1 style="font-size:2.4rem;">These are for you!</h1>
+    <p style="font-size:1.1rem; color:#555;">I hope you like it. I love you!</p>
+
+    <div class="grid">
+
+        <!-- 1. Gallery Cover -->
+        <div class="card icon-card" onclick="goToGallery()">
+            <i class="fa-solid fa-image"></i>
+            <p>Gallery</p>
+        </div>
+
+        <!-- 2. Bouquet -->
+        <div class="card icon-card" onclick="goToBouquet()">
+            <i class="fa-solid fa-seedling"></i>
+            <p>Bouquet</p>
+        </div>
+
+        <!-- 3. Love Letter -->
+        <div class="card icon-card" onclick="goToLetter()">
+            <i class="fa-solid fa-envelope"></i>
+            <p>Love Letter</p>
+        </div>
+
+        <!-- 4. Heart Keys -->
+        <div class="card icon-card" onclick="goToSong()">
+            <i class="fa-solid fa-key"></i>
+            <p>Heart Keys</p>
+        </div>
+
+    </div>
+    <button onclick="goToPage2()" style="width: 150px;">Continue</button>
+    <button class="secondary" onclick="goToWish()" style="width: 150px;">Return</button>
+    <script src="script.js"></script>
+</body>
+
+</html>

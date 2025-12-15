@@ -1,0 +1,153 @@
+/* body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ffb6c1, #ffe6ea);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    width: 90%;
+    max-width: 450px;
+}
+
+h1 {
+    color: #ff4f81;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.message {
+    font-size: 1rem;
+    color: #555;
+}
+
+button {
+    margin-top: 20px;
+    background: #ff4f81;
+    border: none;
+    padding: 12px 20px;
+    color: white;
+    font-size: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #e63a6c;
+}
+
+.hidden {
+    display: none;
+}
+
+.surprise .cake {
+    width: 160px;
+    margin-top: 20px;
+}
+
+.wish {
+    font-size: 1.2rem;
+    color: #e63a6c;
+    margin-top: 10px;
+    font-weight: bold;
+} */
+
+
+/* GENERAL PAGE SETTINGS */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #ffd6e8, #fff0f6);
+    min-height: 100vh;
+    text-align: center;
+    display: block;
+    /* FIX: ensures content always appears */
+    padding-top: 60px;
+}
+
+h1 {
+    color: #ff4f9a;
+}
+
+
+/* PAGE BUTTONS */
+
+button {
+    display: block;
+    margin: 10px auto;
+    padding: 12px 18px;
+    width: 70%;
+    max-width: 250px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 12px;
+    background: #ff4f9a;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #e63d84;
+}
+
+.secondary {
+    background: #bfbfbf;
+    color: #333;
+}
+
+.secondary:hover {
+    background: #a0a0a0;
+}
+
+
+/* SQUARE CARDS FOR PAGE 3 */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 500px;
+    margin: 30px auto;
+}
+
+.card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    /* Make them perfect squares */
+    aspect-ratio: 1 / 1;
+    /* Center icon + text */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+
+/* Icon styling */
+
+.icon-card i {
+    font-size: 2.8rem;
+    color: #ff4f9a;
+    margin-bottom: 8px;
+}
+
+.icon-card p {
+    font-size: 1rem;
+    color: #444;
+    margin: 0;
+}

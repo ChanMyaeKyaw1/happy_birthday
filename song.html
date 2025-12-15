@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Song</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            text-align: center;
+            background: #fff0f6;
+            padding: 20px;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            color: #ff4f9a;
+            margin-bottom: 20px;
+        }
+        
+        video {
+            width: 1200px;
+            /* max-width: 560px; */
+            border-radius: 15px;
+        }
+        
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            background: #ff4f9a;
+            color: white;
+            cursor: pointer;
+            transition: .3s;
+        }
+        
+        button:hover {
+            background: #e63d84;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Song For You!</h1>
+    <p style="font-size:1.2rem; color:#555;">I hope you enjoy it. 🎂🎊</p>
+
+    <video controls autoplay>
+  <source src="img/hbd-song.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+    <button onclick="goBack()">Return</button>
+
+    <script>
+        function goBack() {
+            window.location.href = "page3.html";
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blow the Candles!</title>
+
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("wldgiCJTuE-fWCPdB"); // your PUBLIC KEY
+        })();
+    </script>
+
+
+    <style>
+        body {
+            background: linear-gradient(to bottom, #fff0f6, #ffd6e8);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            font-family: "Poppins", sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            color: #ff4f9a;
+            margin-bottom: 20px;
+            margin-top: 5px;
+        }
+        
+        #wishContainer {
+            margin-bottom: 20px;
+        }
+        
+        #wishInput {
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            width: 250px;
+        }
+        
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            background: #ff4f9a;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: .3s;
+        }
+        
+        button:hover {
+            background: #e63d84;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Make a Wish and Blow the Candles!</h1>
+
+    <div id="wishContainer">
+        <input type="text" id="wishInput" placeholder="Type your wish here...">
+        <br>
+        <button id="startBtn">Start Countdown</button>
+        <!-- <button onclick="goToCandles()">Start Countdown</button> -->
+    </div>
+
+    <div id="countdown"></div>
+
+    <button onclick="goBack()">Return</button>
+
+    <script>
+        const startBtn = document.getElementById("startBtn");
+        const wishInput = document.getElementById("wishInput");
+
+        startBtn.addEventListener("click", function() {
+            const wish = wishInput.value.trim();
+
+            if (!wish) {
+                alert("Please make a wish first!");
+                return;
+            }
+
+            emailjs.send(
+                    "service_k81namm",
+                    "template_kwdq8hm", {
+                        wish_message: wish
+                    })
+                .then(function() {
+                    // success → go to candles page
+                    window.location.href = "candles.html";
+                })
+                .catch(function(error) {
+                    console.error("EmailJS error:", error);
+                    alert("Failed to send wish. Check console.");
+                });
+        });
+
+        function goBack() {
+            window.location.href = "page1.html";
+        }
+    </script>
+
+
+</body>
+
+</html>
