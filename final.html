@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You for Today</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: linear-gradient(to bottom, #fff0f6, #ffd6e8);
+            font-family: "Poppins", sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 600px;
+            padding: 40px 30px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1.2s ease;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            color: #ff4f9a;
+            margin-bottom: 20px;
+        }
+        
+        p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        .final-line {
+            margin-top: 25px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #e63d84;
+        }
+        
+        .buttons {
+            margin-top: 35px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        button,
+        .tg-btn {
+            padding: 12px 24px;
+            font-size: 1rem;
+            border-radius: 25px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .home-btn {
+            background: #ff4f9a;
+            color: white;
+        }
+        
+        .home-btn:hover {
+            background: #e63d84;
+        }
+        
+        .return-btn {
+            background: #ffe0ec;
+            color: #ff4f9a;
+        }
+        
+        .return-btn:hover {
+            background: #ffd0e3;
+        }
+        
+        .tg-btn {
+            background: #2AABEE;
+            color: white;
+        }
+        
+        .tg-btn:hover {
+            background: #229ed9;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Thank You for Today 🤍</h1>
+
+        <p>
+            Thank you for spending your special day here.<br> Every smile, every click, every little moment you shared truly means the world to me.
+        </p>
+
+        <p>
+            This was made with love, just for you — to remind you how special you are.
+        </p>
+
+        <div class="final-line">
+            Happy Birthday, my dear sister 🎂✨<br> You are loved more than you know.
+        </div>
+
+        <div class="buttons">
+            <button class="home-btn" onclick="goHome()">
+                🏠 Back Home
+            </button>
+
+            <button class="return-btn" onclick="goBack()">
+                🔙 Return
+            </button>
+
+            <!-- Telegram button -->
+            <a class="tg-btn" href="https://t.me/charmedChan" target="_blank">
+                <i class="fa-brands fa-telegram"></i> Contact Me
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function goHome() {
+            window.location.href = "index.html";
+        }
+
+        function goBack() {
+            window.location.href = "takePhoto.html";
+        }
+    </script>
+
+</body>
+
+</html>

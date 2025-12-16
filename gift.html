@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mystery Gift</title>
+    <!-- SweetAlert CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, #ffd6e8, #fff0f6);
+            min-height: 100vh;
+            text-align: center;
+            padding-top: 60px;
+        }
+        
+        h1 {
+            font-size: 4rem;
+            color: #ff4f9a;
+            text-align: center;
+        }
+        
+        p {
+            margin-bottom: 60px;
+            font-size: 1.1rem;
+            color: #555;
+        }
+        
+        img {
+            max-width: 500px;
+            border: 5px solid #ccc;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+        
+        button {
+            display: block;
+            margin: 10px auto;
+            padding: 12px 18px;
+            width: 70%;
+            max-width: 250px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 12px;
+            background: #ff4f9a;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        button:hover {
+            background: #e63d84;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Here You Go!!!</h1>
+    <p>Can you guess the Gift and Where it is? 🤔</p>
+
+    <img src="img/babyThreeMini.png" alt="Mystery Gift">
+
+    <button onclick="getHint()">Click Me to Get the Hint</button>
+
+    <a href="hint.html">Click here if you still can't find the gift.</a>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

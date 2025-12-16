@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selfie with Gift</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px;
+        }
+        
+        h1 {
+            color: #ff4f9a;
+            margin-bottom: 20px;
+        }
+        
+        video,
+        canvas {
+            border: 5px solid #ccc;
+            border-radius: 12px;
+            max-width: 90%;
+            margin-bottom: 20px;
+        }
+        
+        .countdown {
+            position: absolute;
+            font-size: 5rem;
+            /* color: #ff4f9a; */
+            color: #0000;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+        
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            /* buttons on left and right */
+            width: 350px;
+            /* adjust width as needed */
+            margin-top: 10px;
+        }
+        
+        button {
+            padding: 12px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            color: white;
+            background-color: #ff4f9a;
+            transition: 0.3s;
+            margin-right: 30px;
+        }
+        
+        button:hover {
+            background-color: #e63d84;
+        }
+        
+        button.secondary {
+            background-color: #6c757d;
+        }
+        
+        button.secondary:hover {
+            background-color: #5a6268;
+        }
+        
+        button.download {
+            background-color: #95dff2;
+        }
+        
+        button.download:hover {
+            background-color: #67d8f1;
+        }
+        
+        button.continue {
+            background-color: #ffe791;
+        }
+        
+        button.continue:hover {
+            background-color: #ffcb97;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Take a Selfie with Your Gift!</h1>
+
+    <div style="position: relative; display: inline-block;">
+        <video id="video" autoplay playsinline width="400" style="transform: scaleX(-1);"></video>
+        <canvas id="canvas" style="display: none;"></canvas>
+        <div id="countdown" class="countdown"></div>
+    </div>
+
+    <div class="buttons">
+        <button class="download" id="downloadBtn" style="display: none;">Download</button>
+        <button class="secondary" id="retake">Retake</button>
+        <button class="continue" id="continue" onclick="goToRating()">Continue</button>
+    </div>
+
+    <script>
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const countdownEl = document.getElementById('countdown');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const retakeBtn = document.getElementById('retake');
+        const takeBtn = document.createElement('button');
+        takeBtn.textContent = 'Capture';
+        takeBtn.style.flex = '1';
+        takeBtn.style.backgroundColor = '#ff4f9a';
+        document.querySelector('.buttons').insertBefore(takeBtn, downloadBtn);
+
+        // setup camera
+        navigator.mediaDevices.getUserMedia({
+                video: {
+                    facingMode: "user"
+                }
+            })
+            .then(stream => {
+                video.srcObject = stream;
+                video.play();
+            })
+            .catch(err => alert('Camera access failed: ' + err));
+
+        // countdown function
+        function startCountdown(callback) {
+            let count = 3;
+            countdownEl.style.display = 'block';
+            countdownEl.textContent = count;
+            const interval = setInterval(() => {
+                count--;
+                if (count > 0) countdownEl.textContent = count;
+                else {
+                    clearInterval(interval);
+                    countdownEl.style.display = 'none';
+                    callback();
+                }
+            }, 1000);
+        }
+
+        // take photo
+        function takePhoto() {
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            ctx.save();
+            ctx.scale(-1, 1);
+            ctx.drawImage(video, -canvas.width, 0, canvas.width, canvas.height);
+            ctx.restore();
+
+            canvas.style.display = 'block';
+            video.style.display = 'none';
+
+            // hide take button, show download button
+            takeBtn.style.display = 'none';
+            downloadBtn.style.display = 'inline-block';
+        }
+
+        // retake
+        retakeBtn.addEventListener('click', () => {
+            canvas.style.display = 'none';
+            video.style.display = 'block';
+            takeBtn.style.display = 'inline-block';
+            downloadBtn.style.display = 'none';
+        });
+
+        // download photo
+        downloadBtn.addEventListener('click', () => {
+            canvas.toBlob(blob => {
+                const a = document.createElement('a');
+                a.href = URL.createObjectURL(blob);
+                a.download = 'selfie.png';
+                a.click();
+            }, 'image/png');
+        });
+
+        // take photo button
+        takeBtn.addEventListener('click', () => startCountdown(takePhoto));
+
+        function goToRating() {
+            window.location.href = "rating.html";
+        }
+    </script>
+</body>
+
+</html>
