@@ -32,7 +32,13 @@
         .photos img:hover {
             transform: scale(1.15) rotate(0deg);
             z-index: 10;
-        } */
+        }
+        */
+        
+        img {
+            width: 1400px;
+            margin-bottom: 1dvh;
+        }
         
         h1 {
             font-size: 2.2rem;
@@ -55,6 +61,16 @@
         button:hover {
             background: #e63d84;
         }*/
+        
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            /* buttons on left and right */
+            width: 350px;
+            /* adjust width as needed */
+            margin-top: 10px;
+            margin-left: 650px;
+        }
         
         button {
             display: flex;
@@ -97,13 +113,15 @@
 <body>
 
     <div class="photos">
-        <img src="img/bd-college.png">
+        <img src="img/memoPhoto.png">
     </div>
 
-    <h1>Captured Memories</h1>
+    <!-- <h1>Captured Memories</h1> -->
 
-    <button onclick="downloadPhotos()" style="width: 150px;">Get Photos</button>
-    <button class="secondary" onclick="goBack()" style="width: 150px;">Return</button>
+    <div class="buttons">
+        <button class="secondary" onclick="goBack()" style="width: 150px;">Return</button>
+        <button onclick="downloadPhotos()" style="width: 150px;">Get Photos</button>
+    </div>
 
     <script>
         // GO BACK
@@ -114,9 +132,19 @@
         // DOWNLOAD ALL PHOTOS
         function downloadPhotos() {
             const urls = [
-                "img/cute-photo1.avif",
-                "img/cute-photo2.avif",
-                "img/cute-photo3.jpeg",
+                "img/photo1.jpeg",
+                "img/photo2.jpeg",
+                "img/photo3.jpeg",
+                "img/photo4.jpeg",
+                "img/photo5.jpeg",
+                "img/photo6.jpeg",
+                "img/photo7.jpeg",
+                "img/photo8.jpeg",
+                "img/photo9.jpeg",
+                "img/photo10.jpeg",
+                "img/photo11.jpeg",
+                "img/photo12.jpeg",
+
             ];
 
             urls.forEach(url => {
