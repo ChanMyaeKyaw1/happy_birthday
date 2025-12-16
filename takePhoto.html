@@ -5,6 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Selfie with Gift</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -32,66 +39,89 @@
             position: absolute;
             font-size: 5rem;
             /* color: #ff4f9a; */
-            color: #0000;
+            color: #ff4f9a;
             top: 40%;
             left: 50%;
             transform: translate(-50%, -50%);
             display: none;
         }
+        /* .countdown {
+            position: absolute;
+            font-size: 6rem;
+            font-weight: bold;
+            color: #ff4f9a;         
+            text-shadow: 0 0 20px rgba(255, 79, 154, 0.8);
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+            z-index: 10;
+        } */
         
         .buttons {
             display: flex;
             justify-content: space-between;
             /* buttons on left and right */
-            width: 350px;
+            width: 150px;
             /* adjust width as needed */
             margin-top: 10px;
+            margin-left: -170px;
         }
         
         button {
-            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 12px auto;
+            padding: 14px 20px;
+            width: 120px;
+            max-width: 280px;
             font-size: 1rem;
+            font-weight: 500;
             border: none;
-            border-radius: 8px;
-            cursor: pointer;
+            border-radius: 25px;
+            background: #ff4f9a;
             color: white;
-            background-color: #ff4f9a;
-            transition: 0.3s;
-            margin-right: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 15px rgba(255, 79, 154, 0.35);
+            margin-right: 20px;
         }
         
         button:hover {
-            background-color: #e63d84;
+            background: #e63d84;
+            transform: translateY(-2px);
         }
         
         button.secondary {
-            background-color: #6c757d;
+            background: #ffe0ec;
+            color: #ff4f9a;
+            box-shadow: 0 6px 15px rgba(255, 79, 154, 0.2);
         }
         
         button.secondary:hover {
-            background-color: #5a6268;
-        }
-        
-        button.download {
-            background-color: #95dff2;
-        }
-        
-        button.download:hover {
-            background-color: #67d8f1;
+            background: #ffd0e3;
+            transform: translateY(-2px);
         }
         
         button.continue {
-            background-color: #ffe791;
+            background-color: #f9dc5c;
+            color: white;
+            box-shadow: 0 6px 15px rgba(255, 79, 154, 0.2);
         }
         
         button.continue:hover {
-            background-color: #ffcb97;
+            background-color: #edcc38;
+            transform: translateY(-2px);
         }
     </style>
 </head>
 
 <body>
-    <h1>Take a Selfie with Your Gift!</h1>
+    <h1 style="font-size:2.3rem; font-family: 'Playfair Display', serif">
+        Take a Selfie with Your Gift! 💝
+    </h1>
 
     <div style="position: relative; display: inline-block;">
         <video id="video" autoplay playsinline width="400" style="transform: scaleX(-1);"></video>

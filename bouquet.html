@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Virtual Flowers</title>
 
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <style>
         body {
             margin: 0;
@@ -135,19 +141,29 @@
         /* Return button */
         
         button {
-            margin-top: 30px;
-            padding: 10px 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 12px auto;
+            padding: 14px 20px;
+            width: 120px;
+            max-width: 280px;
             font-size: 1rem;
+            font-weight: 500;
             border: none;
-            border-radius: 10px;
+            border-radius: 25px;
             background: #ff4f9a;
             color: white;
             cursor: pointer;
-            transition: 0.3s;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 15px rgba(255, 79, 154, 0.35);
+            margin-top: 30px;
         }
         
         button:hover {
             background: #e63d84;
+            transform: translateY(-2px);
         }
         /* Mobile */
         
@@ -167,17 +183,19 @@
 
 <body>
 
-    <h1>Virtual Flowers For You!</h1>
+    <h1 style="font-size:2.5rem; color: #ff4f9a; font-family: 'Playfair Display', serif">
+        Virtual Flowers For You! 💐✨
+    </h1>
 
     <div class="main">
 
         <!-- Left messages -->
         <div class="side">
-            <div class="msg filled">You are the best!</div>
-            <div class="msg outlined">You are the best!</div>
-            <div class="msg filled">You are the best!</div>
-            <div class="msg outlined">You are the best!</div>
-            <div class="msg filled">You are the best!</div>
+            <div class="msg filled">You are the best sister!</div>
+            <div class="msg outlined">You make my life brighter just by being in it!</div>
+            <div class="msg filled">You are my biggest blessing!</div>
+            <div class="msg outlined">You have the kindest heart!</div>
+            <div class="msg filled">You are strong, loving, and truly amazing!</div>
         </div>
 
         <!-- Center bouquet -->
@@ -187,11 +205,11 @@
 
         <!-- Right messages -->
         <div class="side">
-            <div class="msg filled">You are the best!</div>
-            <div class="msg outlined">You are the best!</div>
-            <div class="msg filled">You are the best!</div>
-            <div class="msg outlined">You are the best!</div>
-            <div class="msg filled">You are the best!</div>
+            <div class="msg filled">You mean the world to me!</div>
+            <div class="msg outlined">You are my greatest support!</div>
+            <div class="msg filled">You deserve all the happiness in life!</div>
+            <div class="msg outlined">You always know how to make things better!</div>
+            <div class="msg filled">I am so proud to call you my sister!</div>
         </div>
 
     </div>

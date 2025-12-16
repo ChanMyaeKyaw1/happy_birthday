@@ -6,16 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hello</title>
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            /* buttons on left and right */
+            width: 350px;
+            /* adjust width as needed */
+            margin-top: 10px;
+            margin-left: 650px;
+        }
+    </style>
+
 </head>
 
 <body>
     <!-- Image goes inside body -->
     <img src="./img/hello-gif.gif" style="width: 300px;">
 
-    <h1 style="font-size: 2.7rem;">Yayy, Now This is the Best Part!</h1>
+    <h1 style="font-size: 2.7rem;">Yayy! Now, This is the Best Part! 🥳</h1>
     <p style="font-size:1.2rem; color:#555;">Click the button to see the Gift for You.</p>
 
-    <button onclick="goToGift()" style="width: 120px;">Click me</button>
+    <div class="buttons">
+        <button class="secondary" onclick="goToPage3()" style="width: 120px;">Return</button>
+        <button onclick="goToGift()" style="width: 120px;">Click me</button>
+    </div>
+
 
     <script src="./script.js"></script>
 </body>

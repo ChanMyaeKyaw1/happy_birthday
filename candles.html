@@ -4,15 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blow the Candles!</title>
-
-    <!-- EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-            emailjs.init("wldgiCJTuE-fWCPdB"); // Replace with your EmailJS public key
-        })();
-    </script>
+    <title>Blow the Candles</title>
 
     <style>
         body {
@@ -23,61 +15,49 @@
             min-height: 100vh;
             font-family: "Poppins", sans-serif;
             text-align: center;
-            padding-top: 50px;
+            padding-top: 40px;
         }
         
         h1 {
-            font-size: 2.2rem;
             color: #ff4f9a;
             margin-bottom: 20px;
-            margin-top: 0px;
+        }
+        
+        video {
+            width: 400px;
+            border-radius: 20px;
         }
         
         button {
-            margin-top: 10px;
+            margin-top: 20px;
             padding: 10px 40px;
             border: none;
-            border-radius: 10px;
+            border-radius: 25px;
             background: #ff4f9a;
             color: white;
             font-size: 1rem;
             cursor: pointer;
-            transition: .3s;
         }
         
         button:hover {
             background: #e63d84;
-        }
-        /* #countdown {
-            font-size: 2rem;
-            color: #ff4f9a;
-            margin: 20px 0;
-        } */
-        
-        #cakeVideo {
-            width: 400px;
-            /* max-width: 90%; */
-            height: 100px;
-            border-radius: 20px;
-            display: none;
+            transform: translateY(-2px);
         }
     </style>
 </head>
 
 <body>
 
-    <h1>Make a wish and Blow the Candles!</h1>
+    <h1>Blow the Candles! 🎂</h1>
 
-    <!-- <p style="font-size:1.2rem; color:#555;">I hope you enjoy it. 🎂🎊</p> -->
-
-    <video controls autoplay>
-      <source src="img/candles1.mp4" type="video/mp4">
-      Your browser does not support the video tag.
+    <video autoplay controls>
+        <source src="img/candles1.mp4" type="video/mp4">
     </video>
-    <button onclick="goToPage3()">Next</button>
+
+    <button onclick="nextPage()">Next</button>
 
     <script>
-        function goToPage3() {
+        function nextPage() {
             window.location.href = "page3.html";
         }
     </script>

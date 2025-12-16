@@ -4,7 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blow the Candles!</title>
+    <title>Make a Wish</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <!-- EmailJS -->
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
@@ -13,7 +19,6 @@
             emailjs.init("wldgiCJTuE-fWCPdB"); // your PUBLIC KEY
         })();
     </script>
-
 
     <style>
         body {
@@ -31,86 +36,104 @@
             font-size: 2.2rem;
             color: #ff4f9a;
             margin-bottom: 20px;
-            margin-top: 5px;
         }
         
-        #wishContainer {
-            margin-bottom: 20px;
-        }
-        
-        #wishInput {
-            padding: 10px;
-            font-size: 1rem;
-            border-radius: 8px;
+        input {
+            padding: 12px;
+            width: 260px;
+            border-radius: 10px;
             border: 1px solid #ccc;
-            width: 250px;
+            font-size: 1rem;
+        }
+        
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            /* buttons on left and right */
+            width: 350px;
+            /* adjust width as needed */
+            margin-top: 10px;
+            margin-left: 10px;
         }
         
         button {
-            margin-top: 10px;
-            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 12px auto;
+            padding: 14px 20px;
+            max-width: 280px;
+            font-size: 1rem;
+            font-weight: 500;
             border: none;
-            border-radius: 10px;
+            border-radius: 25px;
             background: #ff4f9a;
             color: white;
-            font-size: 1rem;
             cursor: pointer;
-            transition: .3s;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 15px rgba(255, 79, 154, 0.35);
         }
         
         button:hover {
             background: #e63d84;
+            transform: translateY(-2px);
+        }
+        
+        .secondary {
+            background: #ffe0ec;
+            color: #ff4f9a;
+            box-shadow: 0 6px 15px rgba(255, 79, 154, 0.2);
+        }
+        
+        .secondary:hover {
+            background: #ffd0e3;
         }
     </style>
 </head>
 
 <body>
 
-    <h1>Make a Wish and Blow the Candles!</h1>
+    <h1 style="font-size:2.5rem; color: #ff4f9a; font-family: 'Playfair Display', serif">
+        Make a Wish! ✨
+    </h1>
 
-    <div id="wishContainer">
-        <input type="text" id="wishInput" placeholder="Type your wish here...">
-        <br>
-        <button id="startBtn">Start Countdown</button>
-        <!-- <button onclick="goToCandles()">Start Countdown</button> -->
+    <input type="text" id="wishInput" placeholder="Type your wish here...">
+    <br>
+    <div class="buttons">
+        <button id="sendWish" style="width: 200px;">Start Countdown
+            <i class="fa-solid fa-clock"></i>
+        </button>
+
+        <button class="secondary" onclick="goToPage1()" style="width: 120px;">Return</button>
     </div>
 
-    <div id="countdown"></div>
-
-    <button onclick="goBack()">Return</button>
-
     <script>
-        const startBtn = document.getElementById("startBtn");
-        const wishInput = document.getElementById("wishInput");
-
-        startBtn.addEventListener("click", function() {
-            const wish = wishInput.value.trim();
+        document.getElementById("sendWish").addEventListener("click", function() {
+            const wish = document.getElementById("wishInput").value.trim();
 
             if (!wish) {
-                alert("Please make a wish first!");
+                alert("Please make a wish first 💕");
                 return;
             }
 
             emailjs.send(
-                    "service_k81namm",
-                    "template_kwdq8hm", {
-                        wish_message: wish
-                    })
-                .then(function() {
-                    // success → go to candles page
-                    window.location.href = "candles.html";
-                })
-                .catch(function(error) {
-                    console.error("EmailJS error:", error);
-                    alert("Failed to send wish. Check console.");
-                });
+                "service_k81namm",
+                "template_kwdq8hm", {
+                    wish_message: wish
+                }
+            ).then(() => {
+                window.location.href = "candles.html";
+            }).catch(error => {
+                console.error(error);
+                alert("Failed to send wish 😢");
+            });
         });
 
-        function goBack() {
+        function goToPage1() {
             window.location.href = "index.html";
         }
     </script>
-
 
 </body>
 

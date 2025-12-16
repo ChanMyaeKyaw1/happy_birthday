@@ -40,46 +40,58 @@
         
         .button-container {
             display: flex;
-            gap: 20px;
-            /* space between buttons */
-            justify-content: center;
-            /* center horizontally */
-            margin-top: 20px;
+            justify-content: space-between;
+            /* buttons on left and right */
+            width: 350px;
+            /* adjust width as needed */
+            margin-top: 10px;
+            margin-left: 650px;
         }
         
         .button-container button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 12px auto;
+            padding: 14px 20px;
             width: 150px;
-            padding: 12px 0;
+            max-width: 280px;
             font-size: 1rem;
+            font-weight: 500;
             border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.3s;
+            border-radius: 25px;
+            background: #ff4f9a;
             color: white;
-            background-color: #ff4f9a;
-            /* primary color */
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 15px rgba(255, 79, 154, 0.35);
         }
         
         .button-container button:hover {
-            background-color: #e63d84;
+            background: #e63d84;
+            transform: translateY(-2px);
         }
         
         .button-container button.secondary {
-            background-color: #6c757d;
-            /* secondary color */
+            background: #ffe0ec;
+            color: #ff4f9a;
+            box-shadow: 0 6px 15px rgba(255, 79, 154, 0.2);
         }
         
         .button-container button.secondary:hover {
-            background-color: #5a6268;
+            background: #ffd0e3;
+            transform: translateY(-2px);
         }
     </style>
 </head>
 
 <body>
-    <h1>It is near here. ⬇️</h1>
-    <!-- <p>Can you guess the Gift and Where it is? 🤔</p> -->
+    <h1 style="font-size:2.5rem; font-family: 'Playfair Display', serif">
+        It is near here. ⬇️
+    </h1>
 
-    <img src="img/babyThreeMini.webp" alt="Hint Photo">
+    <img src="img/mystery_box.gif" alt="Hint Photo">
 
     <p>Have you found it?</p>
 

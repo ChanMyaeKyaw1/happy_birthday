@@ -5,6 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mystery Gift</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <!-- SweetAlert CDN -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
@@ -25,7 +32,7 @@
         }
         
         p {
-            margin-bottom: 60px;
+            margin-bottom: 30px;
             font-size: 1.1rem;
             color: #555;
         }
@@ -35,38 +42,48 @@
             border: 5px solid #ccc;
             border-radius: 12px;
             margin-bottom: 30px;
+            margin-top: -20px;
         }
         
         button {
-            display: block;
-            margin: 10px auto;
-            padding: 12px 18px;
-            width: 70%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 12px auto;
+            padding: 14px 20px;
+            width: 75%;
             max-width: 250px;
             font-size: 1rem;
+            font-weight: 500;
             border: none;
-            border-radius: 12px;
+            border-radius: 25px;
             background: #ff4f9a;
             color: white;
             cursor: pointer;
-            transition: 0.3s;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 15px rgba(255, 79, 154, 0.35);
         }
         
         button:hover {
             background: #e63d84;
+            transform: translateY(-2px);
         }
     </style>
 </head>
 
 <body>
-    <h1>Here You Go!!!</h1>
+    <h1 style="font-size:2.5rem; font-family: 'Playfair Display', serif">
+        Here You Go!!!
+    </h1>
+
     <p>Can you guess the Gift and Where it is? 🤔</p>
 
-    <img src="img/babyThreeMini.png" alt="Mystery Gift">
+    <img src="img/mystery_box.gif" alt="Mystery Gift">
 
     <button onclick="getHint()">Click Me to Get the Hint</button>
 
-    <a href="hint.html">Click here if you still can't find the gift.</a>
+    <a href="hint.html">Click here for more hints</a>
 
 
     <script src="script.js"></script>
